@@ -31,7 +31,7 @@ var lengthOfLongestSubstring = function(s) {
             
             windowStart++;
         }
-        
+        // Want to set variable to capture the max length of substring
         max = Math.max(max, (windowEnd - windowStart) + 1);
     }
     
