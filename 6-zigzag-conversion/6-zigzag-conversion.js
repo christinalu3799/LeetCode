@@ -22,7 +22,7 @@ var convert = function(s, numRows) {
         if (y === numRows -1) goingDown = false;
         if (y === 0 ) goingDown = true;
         
-        y = goingDown ? y + 1 : y - 1
+        y = goingDown ? y + 1 : y - 1;
         
         // if(goingDown) {    
         //     // check if we're at the last row 
