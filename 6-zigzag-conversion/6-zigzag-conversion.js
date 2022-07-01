@@ -5,7 +5,6 @@
  */
 var convert = function(s, numRows) {
     if(numRows === 1) return s;
-    let x = 0;
     let y = 0;
     let goingDown = true;
     
@@ -17,26 +16,29 @@ var convert = function(s, numRows) {
     for(let i=0; i < s.length; i++){
         // current character
         const char = s[i];
+        
         rows[y].push(char);
         
-        if(goingDown) {
-            
-            // check if we're at the last row 
-            if(y=== numRows -1) {
-                goingDown = false;
-                x++;
-                y--;
-            } else y++; 
-        // if NOT going down:
-        } else {
-            if(y===0) {
-                goingDown = true;
-                y++;
-            } else {
-                x++;
-                y--;
-            }
-        }
+        if (y === numRows -1) goingDown = false;
+        if (y === 0 ) goingDown = true;
+        
+        y = goingDown ? y + 1 : y - 1
+        
+        // if(goingDown) {    
+        //     // check if we're at the last row 
+        //     if(y=== numRows -1) {
+        //         goingDown = false;
+        //         y--;
+        //     } else y++; 
+        // // if NOT going down:
+        // } else {
+        //     if(y===0) {
+        //         goingDown = true;
+        //         y++;
+        //     } else {
+        //         y--;
+        //     }
+        // }
     }    
     
     // convert into string with reduce function    
