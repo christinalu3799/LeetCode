@@ -18,11 +18,14 @@ var solution = function(isBadVersion) {
      * @return {integer} The first bad version
      */
     return function(n) {
-        // [F F F T T T T T T T]
-        // T --> keep moving right
-        // F --> keep moving left 
-        // [F F]
-        // Math.floor (index)
+        /*
+        [F F F F F F T T T T]
+            lo      mid      hi
+        T --> keep moving right
+        F --> keep moving left 
+        [F F]
+        Math.floor (index)
+        */
         let lo = 1;
         let hi = n;
 
